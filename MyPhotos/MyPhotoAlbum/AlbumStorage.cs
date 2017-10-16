@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Drawing;
 
 namespace Manning.MyPhotoAlbum
 {
@@ -20,12 +19,15 @@ namespace Manning.MyPhotoAlbum
         static public void WriteAlbum(PhotoAlbum album, string path)
         {
             StreamWriter sw = null;
+
             try
             {
                 sw = new StreamWriter(path, false);
                 sw.WriteLine(CurrentVersion.ToString());
+
                 foreach (Photograph p in album)
                     WritePhoto(sw, p);
+
                 album.HasChanged = false;
             }
             catch (UnauthorizedAccessException uax)
@@ -49,12 +51,14 @@ namespace Manning.MyPhotoAlbum
         static public PhotoAlbum ReadAlbum(string path)
         {
             StreamReader sr = null;
+
             try
             {
                 sr = new StreamReader(path);
                 string version = sr.ReadLine();
+
                 PhotoAlbum album = new PhotoAlbum();
-                switch(version)
+                switch (version)
                 {
                     case "63":
                         ReadAlbumV63(sr, album);
@@ -67,7 +71,7 @@ namespace Manning.MyPhotoAlbum
             }
             catch (FileNotFoundException fnx)
             {
-                throw new AlbumStorageException("Unable to read album" + path, fnx);
+                throw new AlbumStorageException("Unable to read album " + path, fnx);
             }
             finally
             {
@@ -77,21 +81,24 @@ namespace Manning.MyPhotoAlbum
         }
         static private void ReadAlbumV63(StreamReader sr, PhotoAlbum album)
         {
+
             Photograph p;
             do
             {
                 p = ReadPhotoV63(sr);
                 if (p != null)
                     album.Add(p);
-            }
-            while (p != null);  
+            } 
+            while (p != null);
         }
         static private Photograph ReadPhotoV63(StreamReader sr)
         {
             string file = sr.ReadLine();
             if (file == null || file.Length == 0)
                 return null;
+
             Photograph p = new Photograph(file);
+
             p.Caption = sr.ReadLine();
             p.DateTaken = DateTime.Parse(sr.ReadLine());
             p.Photographer = sr.ReadLine();

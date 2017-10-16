@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0F4666F7-22C1-423C-81B0-45D944827E0F}</ProjectGuid>
+    <ProjectGuid>{8E5C7541-532C-44FE-A4A7-023F5050A4A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Manning.MyPhotoAlbum</RootNamespace>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{95A150AD-C09D-474E-B9C5-4F9157A7A56E}</ProjectGuid>
+    <ProjectGuid>{3C1DA571-ABAB-45E6-BD00-32F8B86680AF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MyPhotos</RootNamespace>
@@ -79,7 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyPhotoAlbum\MyPhotoAlbum.csproj">
-      <Project>{0f4666f7-22c1-423c-81b0-45d944827e0f}</Project>
+      <Project>{8e5c7541-532c-44fe-a4a7-023f5050a4a1}</Project>
       <Name>MyPhotoAlbum</Name>
     </ProjectReference>
   </ItemGroup>

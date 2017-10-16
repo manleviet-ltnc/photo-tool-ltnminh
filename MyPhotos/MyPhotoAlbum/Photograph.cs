@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
-using System.IO;
 
 namespace Manning.MyPhotoAlbum
 {
@@ -35,7 +34,7 @@ namespace Manning.MyPhotoAlbum
             get { return _caption; }
             set
             {
-                if ( _caption != value)
+                if (_caption != value)
                 {
                     _caption = value;
                     HasChanged = true;
@@ -94,8 +93,8 @@ namespace Manning.MyPhotoAlbum
             _caption = System.IO.Path.GetFileNameWithoutExtension(fileName);
         }
         public override bool Equals(object obj)
-        { 
-            if ( obj is Photograph)
+        {
+            if (obj is Photograph)
             {
                 Photograph p = (Photograph)obj;
                 return string.Equals(FileName, p.FileName, StringComparison.InvariantCultureIgnoreCase);
@@ -118,7 +117,7 @@ namespace Manning.MyPhotoAlbum
                 _bitmap = null;
             }
         }
-        public void Dispone()
+        public void Dispose()
         {
             ReleaseImage();
         }

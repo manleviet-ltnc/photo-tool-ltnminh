@@ -29,7 +29,6 @@ namespace Manning.MyPhotoAlbum
                 if (_pos >= count)
                     _pos = count - 1;
                 return _pos;
-
             }
             set
             {
@@ -46,7 +45,7 @@ namespace Manning.MyPhotoAlbum
         }
         public string ShortName
         {
-            get 
+            get
             {
                 if (string.IsNullOrEmpty(FullName))
                     return null;
@@ -58,7 +57,6 @@ namespace Manning.MyPhotoAlbum
         public PhotoAlbum Album
         {
             get { return _album; }
-
         }
         public AlbumManager()
         {
@@ -104,7 +102,8 @@ namespace Manning.MyPhotoAlbum
             if (name == null)
                 throw new ArgumentNullException("name");
             if (name != FullName && AlbumExits(name) && !overwrite)
-                throw new ArgumentException("An album with this name exists");
+                throw new ArgumentException("An album with this name exists ");
+
             AlbumStorage.WriteAlbum(Album, name);
             FullName = name;
         }
