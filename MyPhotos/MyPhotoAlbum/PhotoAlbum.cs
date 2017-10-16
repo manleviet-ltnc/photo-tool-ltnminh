@@ -15,8 +15,10 @@ namespace Manning.MyPhotoAlbum
             get
             {
                 if (_hasChanged) return true;
+
                 foreach (Photograph p in this)
                     if (p.HasChanged) return true;
+
                 return false;
             }
             set
@@ -27,21 +29,22 @@ namespace Manning.MyPhotoAlbum
                         p.HasChanged = false;
             }
         }
-        public Photograph Add(string filename)
+
+        public Photograph Add(string fileName)
         {
-            Photograph p = new Photograph(filename);
+            Photograph p = new Photograph(fileName);
             base.Add(p);
             return p;
         }
+
         protected override void ClearItems()
         {
             if (Count > 0)
             {
-                Dispone();
+                Dispose();
                 base.ClearItems();
                 HasChanged = true;
             }
-            
         }
         protected override void InsertItem(int index, Photograph item)
         {
@@ -54,12 +57,14 @@ namespace Manning.MyPhotoAlbum
             base.RemoveItem(index);
             HasChanged = true;
         }
+
         protected override void SetItem(int index, Photograph item)
         {
             base.SetItem(index, item);
             HasChanged = true;
+
         }
-        public void Dispone()
+        public void Dispose()
         {
             foreach (Photograph p in this)
                 p.Dispone();

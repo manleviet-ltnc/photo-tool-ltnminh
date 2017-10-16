@@ -39,6 +39,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuNext = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrevious = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuView = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,6 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuEditAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEditRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,6 +84,7 @@
             this.pbxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxPhoto.TabIndex = 1;
             this.pbxPhoto.TabStop = false;
+            this.pbxPhoto.Click += new System.EventHandler(this.pbxPhoto_Click);
             // 
             // ctxMenuPhoto
             // 
@@ -154,6 +155,13 @@
             this.mnuPrevious.Size = new System.Drawing.Size(192, 22);
             this.mnuPrevious.Text = "&Previous";
             this.mnuPrevious.Click += new System.EventHandler(this.mnuPrevious_Click);
+            // 
+            // mnuView
+            // 
+            this.mnuView.DropDown = this.ctxMenuPhoto;
+            this.mnuView.Name = "mnuView";
+            this.mnuView.Size = new System.Drawing.Size(44, 20);
+            this.mnuView.Text = "&View";
             // 
             // menuStrip1
             // 
@@ -329,13 +337,6 @@
             this.mnuEditRemove.Size = new System.Drawing.Size(190, 22);
             this.mnuEditRemove.Text = "Remo&ve";
             this.mnuEditRemove.Click += new System.EventHandler(this.mnuEditRemove_Click);
-            // 
-            // mnuView
-            // 
-            this.mnuView.DropDown = this.ctxMenuPhoto;
-            this.mnuView.Name = "mnuView";
-            this.mnuView.Size = new System.Drawing.Size(44, 20);
-            this.mnuView.Text = "&View";
             // 
             // mnuHelp
             // 

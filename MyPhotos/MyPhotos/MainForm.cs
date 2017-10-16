@@ -138,17 +138,18 @@ namespace MyPhotos
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Title = "Open Album";
-            dlg.Filter = "Album files (*.abm)|*.abm" + "|All files (*.*)|*.*";
+            dlg.Filter = "Album files (*.abm)|*.abm"
+                + "|All files (*.*)|*.*";
             dlg.InitialDirectory = AlbumManager.DefaultPath;
             dlg.RestoreDirectory = true;
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                //TODO: save any existing album
-                // Open the new album
+                //TODO: save any existing  album
+
+                //Open the new album
                 //TODO: handle invalid album file
                 Manager = new AlbumManager(dlg.FileName);
                 DisplayAlbum();
-                SetStatusStrip(dlg.FileName);
             }
             dlg.Dispose();
         }
@@ -247,6 +248,11 @@ namespace MyPhotos
         {
             mnuNext.Enabled = (Manager.Index < Manager.Album.Count - 1);
             mnuPrevious.Enabled = (Manager.Index > 0);
+        }
+
+        private void pbxPhoto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
