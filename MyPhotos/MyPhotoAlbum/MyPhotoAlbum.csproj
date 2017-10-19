@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E5C7541-532C-44FE-A4A7-023F5050A4A1}</ProjectGuid>
+    <ProjectGuid>{11B5D048-A71C-4586-9EA0-F4F2A894AB7A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Manning.MyPhotoAlbum</RootNamespace>
@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AlbumManager.cs" />
     <Compile Include="AlbumStorage.cs" />
+    <Compile Include="ImageUtility.cs" />
     <Compile Include="PhotoAlbum.cs" />
     <Compile Include="Photograph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

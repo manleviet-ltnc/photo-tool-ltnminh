@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3253203-DE32-42C7-A59E-7CD20D4FFA9A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{C46EC0F7-D5BF-4C1F-80CF-8BDBE91EBD03}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyPhotos</RootNamespace>
-    <AssemblyName>MyPhotos</AssemblyName>
+    <RootNamespace>Manning.MyPhotoControls</RootNamespace>
+    <AssemblyName>MyPhotoControls</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -38,54 +36,48 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="BaseEditDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="BaseEditDialog.Designer.cs">
+      <DependentUpon>BaseEditDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="PhotoEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhotoEditDialog.Designer.cs">
+      <DependentUpon>PhotoEditDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PixelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PixelDialog.Designer.cs">
+      <DependentUpon>PixelDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyPhotoAlbum\MyPhotoAlbum.csproj">
       <Project>{11b5d048-a71c-4586-9ea0-f4f2a894ab7a}</Project>
       <Name>MyPhotoAlbum</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MyPhotoControls\MyPhotoControls.csproj">
-      <Project>{c46ec0f7-d5bf-4c1f-80cf-8bdbe91ebd03}</Project>
-      <Name>MyPhotoControls</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseEditDialog.resx">
+      <DependentUpon>BaseEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoEditDialog.resx">
+      <DependentUpon>PhotoEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PixelDialog.resx">
+      <DependentUpon>PixelDialog.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

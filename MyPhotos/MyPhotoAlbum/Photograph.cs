@@ -16,7 +16,7 @@ namespace Manning.MyPhotoAlbum
         private string _fileName;
         public string FileName
         {
-            get { return this._fileName; }
+            get { return _fileName; }
         }
         private Bitmap _bitmap;
         public Bitmap Image
@@ -28,6 +28,7 @@ namespace Manning.MyPhotoAlbum
                 return _bitmap;
             }
         }
+
         private string _caption = "";
         public string Caption
         {
@@ -37,7 +38,7 @@ namespace Manning.MyPhotoAlbum
                 if (_caption != value)
                 {
                     _caption = value;
-                    HasChanged = true;
+                    _hasChangeed = true;
                 }
             }
         }
@@ -80,12 +81,13 @@ namespace Manning.MyPhotoAlbum
                 }
             }
         }
-        private bool _hasChanged = true;
+        private bool _hasChangeed = true;
         public bool HasChanged
         {
-            get { return _hasChanged; }
-            set { _hasChanged = value; }
+            get { return _hasChangeed; }
+            set { _hasChangeed = value; }
         }
+
         public Photograph(string fileName)
         {
             _fileName = fileName;
@@ -121,5 +123,6 @@ namespace Manning.MyPhotoAlbum
         {
             ReleaseImage();
         }
+
     }
 }

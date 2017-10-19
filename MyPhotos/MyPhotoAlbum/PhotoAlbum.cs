@@ -33,6 +33,7 @@ namespace Manning.MyPhotoAlbum
             base.Add(p);
             return p;
         }
+
         protected override void ClearItems()
         {
             if (Count > 0)
@@ -57,7 +58,6 @@ namespace Manning.MyPhotoAlbum
         {
             base.SetItem(index, item);
             HasChanged = true;
-
         }
         public void Dispose()
         {

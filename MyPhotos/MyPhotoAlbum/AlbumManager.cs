@@ -58,11 +58,14 @@ namespace Manning.MyPhotoAlbum
         {
             get { return _album; }
         }
+
+
         public AlbumManager()
         {
             _album = new PhotoAlbum();
         }
-        public AlbumManager(string name) : this()
+        public AlbumManager(string name)
+            : this()
         {
             _name = name;
             _album = AlbumStorage.ReadAlbum(name);
@@ -102,8 +105,7 @@ namespace Manning.MyPhotoAlbum
             if (name == null)
                 throw new ArgumentNullException("name");
             if (name != FullName && AlbumExits(name) && !overwrite)
-                throw new ArgumentException("An album with this name exists ");
-
+                throw new ArgumentException("An album with this name exists");
             AlbumStorage.WriteAlbum(Album, name);
             FullName = name;
         }

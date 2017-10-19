@@ -24,10 +24,8 @@ namespace Manning.MyPhotoAlbum
             {
                 sw = new StreamWriter(path, false);
                 sw.WriteLine(CurrentVersion.ToString());
-
                 foreach (Photograph p in album)
                     WritePhoto(sw, p);
-
                 album.HasChanged = false;
             }
             catch (UnauthorizedAccessException uax)
@@ -64,14 +62,15 @@ namespace Manning.MyPhotoAlbum
                         ReadAlbumV63(sr, album);
                         break;
                     default:
-                        throw new AlbumStorageException("Unrecognized album version");
+                        throw new AlbumStorageException("Unrecognized album  version");
                 }
+
                 album.HasChanged = false;
                 return album;
             }
             catch (FileNotFoundException fnx)
             {
-                throw new AlbumStorageException("Unable to read album " + path, fnx);
+                throw new AlbumStorageException("Unable to read album" + path, fnx);
             }
             finally
             {
@@ -81,7 +80,6 @@ namespace Manning.MyPhotoAlbum
         }
         static private void ReadAlbumV63(StreamReader sr, PhotoAlbum album)
         {
-
             Photograph p;
             do
             {
@@ -96,13 +94,12 @@ namespace Manning.MyPhotoAlbum
             string file = sr.ReadLine();
             if (file == null || file.Length == 0)
                 return null;
-
             Photograph p = new Photograph(file);
-
             p.Caption = sr.ReadLine();
             p.DateTaken = DateTime.Parse(sr.ReadLine());
             p.Photographer = sr.ReadLine();
             p.Notes = sr.ReadLine();
+
             return p;
         }
     }
