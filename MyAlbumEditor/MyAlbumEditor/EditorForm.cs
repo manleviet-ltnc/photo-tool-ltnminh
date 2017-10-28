@@ -131,7 +131,7 @@ namespace MyAlbumEditor
         }
         private void lstPhotos_DoubleClick(object sender, EventArgs e)
         {
-            btnAlbumProps.PerformClick();
+            btnPhotoProps.PerformClick();
         }
 
         private void lstPhotos_SelectedIndexChanged(object sender, EventArgs e)

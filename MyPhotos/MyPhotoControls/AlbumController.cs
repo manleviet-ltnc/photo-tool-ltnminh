@@ -38,7 +38,6 @@ namespace Manning.MyPhotoControls
                     pwdDlg.Album = path;
                     if (pwdDlg.ShowDialog() != DialogResult.OK)
                         return false;
-
                     password = pwdDlg.Password;
                 }
             }
