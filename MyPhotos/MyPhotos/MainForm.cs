@@ -456,7 +456,14 @@ namespace MyPhotos
         }
         private void tsbPixelData_Click(object sender, EventArgs e)
         {
-
+            Form f = PixelForm;
+            if ( f== null || f.IsDisposed || !f.Visible)
+            {
+                mnuPixelData.PerformClick();
+            }
+            else
+                f.Hide();
+            UpdatePixelButton(PixelForm.Visible);
         }
         private void UpdatePixelButton(bool visible)
         {
