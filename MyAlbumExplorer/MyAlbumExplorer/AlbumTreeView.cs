@@ -109,7 +109,7 @@ namespace MyAlbumExplorer
             if (refresh != null)
                 refresh.RefreshNode();
         }
-        private void SaveAlbumChanges()
+        public void SaveAlbumChanges()
         {
             AlbumNode aNode = SelectedNode as AlbumNode;
             if (aNode == null)
